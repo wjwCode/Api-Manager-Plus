@@ -29,13 +29,13 @@ class Application
     public function run()
     {
         self::$starRunTime = microtime();
+        self::$app = $this;
         self::init();
     }
 
     private static function init()
-    {
-        self::$app = $this;
-        $this->registerError();
+    {    
+        self::registerError();
     }
 
     public function has()
@@ -50,7 +50,7 @@ class Application
     public function bulid()
     {}
 
-    public function registerError()
+    public static function registerError()
     {
         Error::register();
     }
