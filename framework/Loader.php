@@ -42,7 +42,7 @@ class Loader
         
     }
     
-    public static function includeFile($class)
+    private static function includeFile($class)
     { 
         if (!empty(self::$mapFiles[$class])) {
             return self::$mapFiles[$class];
