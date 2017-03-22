@@ -1,5 +1,5 @@
 <?php
-// index run
+//入口文件
 defined('API_DEBUG') or define('API_DEBUG', true);
 defined('DS') or define('DS',DIRECTORY_SEPARATOR);
 defined('FRAMEWORK_PATH') or define('FRAMEWORK_PATH', dirname(__FILE__) .DS. 'framework' .DS);
