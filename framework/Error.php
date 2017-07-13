@@ -1,6 +1,9 @@
 <?php
 namespace framework;
 
+use Exception;
+use TypeError;
+
 class Error
 {
 
@@ -23,19 +26,19 @@ class Error
 
     public static function error($errno, $errstr, $errfile = '', $errline = 0, $errcontext = [])
     {
-        $exception = new \ErrorException($errno, $errstr, $errfile, $errline, $errcontext);
+        $exception = new Exception($errno, $errstr, $errfile, $errline, $errcontext);
         throw self;
     }
 
     public static function exception($error)
     {
-        $error = new \ThrowableError($error);
+        $error = new TypeError($error);
     }
 
     public static function shutdown()
     {
         if ($error = error_get_last()) {
-            $exception = new \ErrorException($error['type'], $error['message'], $error['file'], $error['line']);
+            $exception = new Exception($error['type'], $error['message'], $error['file'], $error['line']);
             $this->exception($exception);
         }
     }  

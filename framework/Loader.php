@@ -34,6 +34,7 @@ class Loader
             return true;
         }
     }
+    
     public static function register($autoload = '')
     {
         self::$isWin = (strpos(PHP_OS, 'WIN') !== false)?true:false;
@@ -54,4 +55,5 @@ class Loader
             return include APP_PATH.$class;
         }
     }
+
 }

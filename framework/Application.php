@@ -1,11 +1,15 @@
 <?php
+/**
+ * 
+ * 
+ * @author zhouyangyang 2017年7月13日上午11:51:39
+ */
 namespace framework;
 
 class Application
 {
 
     public static $app;
-
     
     public static $starRunTime;
 
@@ -26,17 +30,19 @@ class Application
     // 用于缓存依赖信息，以类名或接口名为键
     private $_dependencies = [];
 
-    public function run()
+    public function bootstrap()
     {
         self::$starRunTime = microtime();
+        
         self::$app = $this;
-        self::init();
+        //registerError
+        self::registerError();
+        
+        Bootstrap::run();
+        
     }
 
-    private static function init()
-    {    
-        self::registerError();
-    }
+    
 
     public function has()
     {}
