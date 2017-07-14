@@ -6,7 +6,9 @@
  */
 namespace framework;
 
-class Application
+use ArrayAccess;
+
+class Application implements ArrayAccess
 {
 
     public static $app;
