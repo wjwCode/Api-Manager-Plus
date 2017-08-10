@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * Application
  * 
  * @author zhouyangyang 2017年7月13日上午11:51:39
  */
@@ -44,8 +44,6 @@ class Application implements ArrayAccess
         
     }
 
-    
-
     public function has()
     {}
 
@@ -62,4 +60,16 @@ class Application implements ArrayAccess
     {
         Error::register();
     }
+    public function offsetGet($offset)
+    {}
+
+    public function offsetExists($offset)
+    {}
+
+    public function offsetUnset($offset)
+    {}
+
+    public function offsetSet($offset, $value)
+    {}
+
 }
